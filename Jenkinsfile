@@ -8,7 +8,7 @@ pipeline {
     stages{
         stage('Build Docker Image'){
             steps{
-                sh "docker build . -t cz65rv/nodejs:${IMAGE_URL_WITH_TAG}"
+                sh "docker build . -t cz65rv/nodejs:${DOCKER_TAG}"
             }
         }
         stage('Push Docker Image'){
