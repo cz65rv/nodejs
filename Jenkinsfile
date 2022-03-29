@@ -16,7 +16,7 @@ pipeline {
 
                 withCredentials([string(credentialsId: 'DOCKER_HUB_CRED', variable: 'PASSWORD')]) {
                     sh 'docker login -u cz65rv -p $PASSWORD'
-                    sh "docker push cz65rv/nodejs:${IMAGE_URL_WITH_TAG}"
+                    sh "docker push cz65rv/nodejs:${DOCKER_TAG}"
                 }            
             }
         }
