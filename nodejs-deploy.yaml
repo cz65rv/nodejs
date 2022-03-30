@@ -19,3 +19,18 @@ spec:
         image: cz65rv/nodejs:Tag
         ports:
         - containerPort: 8080
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: nodejs 
+spec:
+  selector:
+    app: nodejs 
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer 
