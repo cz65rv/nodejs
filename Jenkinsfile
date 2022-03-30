@@ -29,7 +29,7 @@ pipeline {
                     sh "scp -o StrictHostKeyChecking=no nodejs-deployment.yaml ubuntu@10.1.1.21:/home/ubuntu/"
                     script{
                         try{
-                            sh "ssh ubuntu@10.1.1.20 kubectl apply -f nodejs-deployment.yaml"
+                            sh "ssh ubuntu@10.1.1.21 kubectl apply -f nodejs-deployment.yaml"
                         }
                         catch(error){
                             sh "ssh ubuntu@10.1.1.21 kubectl create -f nodejs-deployment.yaml"
