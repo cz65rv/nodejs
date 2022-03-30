@@ -23,7 +23,7 @@ pipeline {
 
         stage('Deployment'){
             steps{
-                sh "chmod +x changeTag.sh"
+                sh "chmod +x change-tag.sh"
                 sh "./change-tag.sh ${DOCKER_TAG}"
                 sshagent(['deployer']) {
                     sh "scp -o StrictHostKeyChecking=no nodejs-deployment.yaml ubuntu@10.1.1.21:/home/ubuntu/"
