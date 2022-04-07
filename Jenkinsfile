@@ -21,7 +21,7 @@ pipeline {
             }
         }
 
-        stage('Deployment'){
+        stage('Deploy to Kubernets Cluster'){
             steps{
                 sh "chmod +x change-tag.sh"
                 sh "./change-tag.sh ${DOCKER_TAG}"
